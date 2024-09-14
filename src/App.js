@@ -9,13 +9,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: 'AIzaSyB4spfHBeWTOJF_9UA99i2OwW5cp-_K7lw',
-  authDomain: 'firstchatapp-9917f.firebaseapp.com',
-  projectId: 'firstchatapp-9917f',
-  storageBucket: 'firstchatapp-9917f.appspot.com',
-  messagingSenderId: '779142643214',
-  appId: '1:779142643214:web:f95a002d1fa6847db4065f',
-  measurementId: 'G-6NQJRR55ZS',
+ //configs
 }
 
 const app = initializeApp(firebaseConfig)
