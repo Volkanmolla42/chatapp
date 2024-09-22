@@ -2,14 +2,27 @@ import React, { useRef, useState } from 'react'
 import './App.css'
 
 import { initializeApp } from 'firebase/app'
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth'
-import { getFirestore, collection, query, orderBy, limit, addDoc, serverTimestamp } from 'firebase/firestore'
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from 'firebase/auth'
+import {
+  getFirestore,
+  collection,
+  query,
+  orderBy,
+  limit,
+  addDoc,
+  serverTimestamp,
+} from 'firebase/firestore'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 // Initialize Firebase
 const firebaseConfig = {
- //configs
+  //configs
 }
 
 const app = initializeApp(firebaseConfig)
@@ -46,7 +59,7 @@ function SignIn() {
       <button className='sign-in' onClick={signInWithGoogle}>
         Sign in with Google
       </button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p>Miav</p>
     </>
   )
 }
@@ -91,13 +104,18 @@ function ChatRoom() {
   return (
     <>
       <main>
-        {messages && messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+        {messages &&
+          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
 
         <span ref={dummy}></span>
       </main>
 
       <form onSubmit={sendMessage}>
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder='say something nice' />
+        <input
+          value={formValue}
+          onChange={(e) => setFormValue(e.target.value)}
+          placeholder='say something nice'
+        />
 
         <button type='submit' disabled={!formValue}>
           🕊️
@@ -114,7 +132,12 @@ function ChatMessage(props) {
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt='avatar' />
+      <img
+        src={
+          photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'
+        }
+        alt='avatar'
+      />
       <p>{text}</p>
     </div>
   )
